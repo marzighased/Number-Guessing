@@ -12,5 +12,13 @@ guessBtn.addEventListener('click', function() {
     } else if (userGuess === secretNumber) {
         message.textContent = 'Correct!';
         message.style.color = 'green';
-    } 
-})
+    } else if (userGuess > secretNumber) {
+        message.textContent = 'Your Number is too Big!';
+        message.style.color = 'red';
+    } else {
+        message.textContent = 'Your Number is too Small!';
+        message.style.color = 'red'; 
+    }
+    guessInput.value = '';
+    guessInput.focus();      
+});
